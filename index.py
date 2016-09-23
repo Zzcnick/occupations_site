@@ -12,10 +12,12 @@ def redir():
 
 @app.route("/occupations")
 def occupations():
+    raw_data = profession.parseCSV("occupations.csv")
     return render_template(
         "simple_dark.html",
         title="Occupation Randomizer",
-        occupation=profession.choose(profession.parseCSV("occupations.csv"))
+        occupation=profession.choose(raw_data),
+        data=raw_data
     )
 
 # Prevents following code from running unless it is standalone.

@@ -22,4 +22,5 @@ def choose(data):
     return -1
 
 foo = parseCSV("occupations.csv")
-print(choose(foo));
+# print(choose(foo))
+# print type(foo)
