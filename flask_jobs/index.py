@@ -1,18 +1,18 @@
 # Occupations Chooser Website
 
-import profession # Occupation Selector
 from flask import Flask, render_template, redirect
+from utils import profession # Occupation Selector
 app = Flask(__name__)
 
 # Website Routes
 # ===============================================================
 @app.route("/")
 def redir():
-    return redirect("/occupations")
+    return redirect("/occupations/")
 
-@app.route("/occupations")
+@app.route("/occupations/")
 def occupations():
-    raw_data = profession.parseCSV("occupations.csv")
+    raw_data = profession.parseCSV("data/occupations.csv")
     return render_template(
         "simple_dark.html",
         title="Occupation Randomizer",

@@ -21,6 +21,6 @@ def choose(data):
             return key
     return -1
 
-foo = parseCSV("occupations.csv")
+foo = parseCSV("data/occupations.csv")
 # print(choose(foo))
 # print type(foo)
